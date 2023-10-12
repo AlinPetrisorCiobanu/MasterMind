@@ -6,6 +6,7 @@ body {
     background-color: black;
     background-image: url(../img/background.jpg);
     background-size: contain;
+    overflow: scroll;
 }
 /* altura y ancho son medidas para cuadrar los divs "contenedores" */
 .altura {
