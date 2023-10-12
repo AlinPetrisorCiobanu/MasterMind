@@ -16,18 +16,19 @@ body {
 .espaciador {
     height: 10vh;
 }
+.overflowScroll{
+    overflow: scroll;
+}
 
 /* ajuste de tamaño los 2 divs con los parrafos de About. */
 .divInstruccionesMasterMindParrafoDeArriba {
     height: 50vh;
     border-radius: 10px;
-    overflow: scroll;
 }
 
 .divInstruccionesMasterMindParrafoDeAbajo {
     height: 20vh;
     border-radius: 10px;
-    overflow: scroll;
 }
 
 ::-webkit-scrollbar {
