@@ -4,43 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Bungee+Shade&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
     <title>SelectorDeColores</title>
 </head>
 
 <body>
-    <div class="container-fluid bg-warning">
-        <div class="container bg-dark altura text-white text-center d-flex justify-content-center align-items-center">
-            <div class="row bg-primary anchoCompleto justify-content-center">
+    <div class="container-fluid backgroundImagen">
+        <div class="container altura text-white text-center d-flex justify-content-center align-items-center">
+            <div class="row anchoCompleto justify-content-center">
                 <div class="col-12">
-                    <h1>MASTERMIND</h1>
+                    <h1 class="fontDeGoogleParaMastermind">MASTERMIND</h1>
                 </div>
                 <div class="col-12 espaciador"></div>
                 <div class="col-12">
-                    <h3>Choose yor colours</h3>
+                    <h3 class="fontDeGoogleParaMastermind2">Choose yor colours :</h3>
                 </div>
                 <div class="col-12 espaciador"></div>
                 <div class="col-12">
                     <div class="row">
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-10 bg-warning mt-2">1</div>
+                                <div id="colorSeleccionadoUno" class="col-10 mt-2 divsColoresSelector"></div>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-10 bg-info mt-2">2</div>
+                                <div id="colorSeleccionadoDos" class="col-10 mt-2 divsColoresSelector"></div>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-10 bg-dark mt-2">3</div>
+                                <div id="colorSeleccionadoTres" class="col-10 mt-2 divsColoresSelector"></div>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-10 bg-danger mt-2">4</div>
+                                <div id="colorSeleccionadoCuatro" class="col-10 mt-2 divsColoresSelector"></div>
                             </div>
                         </div>
                     </div>
@@ -48,29 +51,33 @@
                     <div class="row">
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-5 bg-warning mt-2">
-                                    <input type="color" class="anchoCompleto">
+                                <div class="col-12 espaciadorPequenio"></div>
+                                <div class="col-5">
+                                    <input id="colorUno" type="color" class="anchoCompleto" value="#f30505">
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-5 bg-info mt-2">
-                                    <input type="color" class="anchoCompleto">
+                                <div class="col-12 espaciadorPequenio"></div>
+                                <div class="col-5">
+                                    <input id="colorDos" type="color" class="anchoCompleto" value="#0000ff">
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-5 bg-dark mt-2">
-                                    <input type="color" class="anchoCompleto">
+                                <div class="col-12 espaciadorPequenio"></div>
+                                <div class="col-5">
+                                    <input id="colorTres" type="color" class="anchoCompleto" value="#008000">
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="row justify-content-center align-items-center">
-                                <div class="col-5 bg-danger mt-2">
-                                    <input type="color" class="anchoCompleto">
+                                <div class="col-12 espaciadorPequenio"></div>
+                                <div class="col-5">
+                                    <input id="colorCuatro" type="color" class="anchoCompleto" value="#ffff00">
                                 </div>
                             </div>
                         </div>
@@ -80,10 +87,10 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-6">
-                            <a href="gameMasterMind.html"><button>Start</button></a>
+                            <a href="gameMasterMind.html"><button class="botonesPrincipales">Start</button></a>
                         </div>
                         <div class="col-6">
-                            <a href="../index.html"><button>Close</button></a>
+                            <a href="../index.html"><button class="botonesPrincipales">Close</button></a>
                         </div>
                     </div>
                 </div>
