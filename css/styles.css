@@ -1,29 +1,35 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
-        /* altura y ancho son medidas para cuadrar los divs "contenedores" */
-.altura{
+
+/* altura y ancho son medidas para cuadrar los divs "contenedores" */
+.altura {
     height: 100vh;
 }
-.anchoCompleto{
+
+.anchoCompleto {
     width: 100%;
 }
-        /* espaciador es una clase que le asigon a div espaciadores */
-.espaciador{
+
+/* espaciador es una clase que le asigon a div espaciadores */
+.espaciador {
     height: 10vh;
 }
-        /* ajuste de tamaño los 2 divs con los parrafos de About. */
-.divInstruccionesMasterMindParrafoDeArriba{
+
+/* ajuste de tamaño los 2 divs con los parrafos de About. */
+.divInstruccionesMasterMindParrafoDeArriba {
     height: 50vh;
     border-radius: 10px;
     overflow: scroll;
 }
-.divInstruccionesMasterMindParrafoDeAbajo{
+
+.divInstruccionesMasterMindParrafoDeAbajo {
     height: 20vh;
     border-radius: 10px;
     overflow: scroll;
 }
+
 ::-webkit-scrollbar {
     position: absolute;
     display: none;
