@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+        /* altura y ancho son medidas para cuadrar los divs "contenedores" */
+.altura{
+    height: 100vh;
+}
+.anchoCompleto{
+    width: 100%;
+}
+        /* espaciador es una clase que le asigon a div espaciadores */
+.espaciador{
+    height: 10vh;
+}
