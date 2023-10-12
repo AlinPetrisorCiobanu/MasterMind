@@ -2,7 +2,11 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.backgroundImagen{
+    background-color: black;
+    background-image: url(../img/background.jpg);
+    background-size: contain;
+}
 /* altura y ancho son medidas para cuadrar los divs "contenedores" */
 .altura {
     height: 100vh;
@@ -35,3 +39,36 @@ body {
     position: absolute;
     display: none;
 }
+    /* diesño los botones del inicio*/
+
+.botonesInicio{
+    background-color: rgba(4, 4, 4, 0.626);
+    width: 40vw;
+    max-width: 200px;
+    border: white 1px solid;
+    border-radius: 30px;
+    color: aliceblue;
+    font-size: 1.6vw;
+}
+.fontDeGoogleParaMastermind{
+    font-family: 'Bungee Shade', sans-serif;
+}
+.encabezadoPaginaPrincipal{
+    font-size: 10vw;
+} 
+@media(max-width:430px){
+    .encabezadoPaginaPrincipal{
+        font-size: 18vw;
+    } 
+    .botonesInicio{
+        font-size: 5vw;
+    }
+} 
+@media screen and (min-width: 430px) and (max-width: 991px) {
+    .encabezadoPaginaPrincipal{
+        font-size: 14vw;
+    }
+    .botonesInicio{
+        font-size: 3vw;
+    }
+}  
