@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    max-height: 100vh;
+    overflow: hidden;
 }
 .backgroundImagen{
     background-color: black;
@@ -8,6 +10,11 @@ body {
     background-size: contain;
     overflow: scroll;
     max-height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 /* altura y ancho son medidas para cuadrar los divs "contenedores" */
 .altura {
