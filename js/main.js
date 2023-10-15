@@ -1,17 +1,23 @@
-const colorUno=document.getElementById("colorUno")
-const colorDos=document.getElementById("colorDos")
-const colorTres=document.getElementById("colorTres")
-const colorCuatro=document.getElementById("colorCuatro")
-const colorSeleccionadoUno=document.getElementById("colorSeleccionadoUno")
-const colorSeleccionadoDos=document.getElementById("colorSeleccionadoDos")
-const colorSeleccionadoTres=document.getElementById("colorSeleccionadoTres")
-const colorSeleccionadoCuatro=document.getElementById("colorSeleccionadoCuatro")
+const colorUno=document.querySelector("#colorUno")
+const colorDos=document.querySelector("#colorDos")
+const colorTres=document.querySelector("#colorTres")
+const colorCuatro=document.querySelector("#colorCuatro")
+const colorSeleccionadoUno=document.querySelector("#colorSeleccionadoUno")
+const colorSeleccionadoDos=document.querySelector("#colorSeleccionadoDos")
+const colorSeleccionadoTres=document.querySelector("#colorSeleccionadoTres")
+const colorSeleccionadoCuatro=document.querySelector("#colorSeleccionadoCuatro")
+
+
+
+coloresBloques=[localStorage.getItem(colorUno),localStorage.getItem(colorDos),localStorage.getItem(colorTres),localStorage.getItem(colorCuatro)]  
+console.log(coloresBloques)
+
+
 colorSeleccionadoUno.style.background=colorUno.value
 colorSeleccionadoDos.style.background=colorDos.value
 colorSeleccionadoTres.style.background=colorTres.value
 colorSeleccionadoCuatro.style.background=colorCuatro.value
 
-    
 
 colorUno.addEventListener('input',()=>{
     colorSeleccionadoUno.style.background=colorUno.value

@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    max-height: 100vh;
     overflow: hidden;
 }
 .backgroundImagen{
@@ -10,6 +9,7 @@ body {
     background-size: contain;
     overflow: scroll;
     max-height: 100vh;
+    max-width: 100vw;
     padding: 0;
     margin: 0;
     position: relative;
@@ -29,11 +29,11 @@ body {
 .espaciador {
     height: 10vh;
 }
-.espaciadorMedio {
+.espaciadorMedio{
     height: 5vh;
 }
 .espaciadorPequenio{
-    height: 1vh;
+    height: 1.5vh;
 }
 .overflowScroll{
     overflow: scroll;
@@ -65,6 +65,16 @@ body {
     color: aliceblue;
     font-size: 1.6vw;
 }
+.botonesGame{
+    background-color: rgba(4, 4, 4, 0.626);
+    width: 40vw;
+    max-width: 200px;
+    border: white 1px solid;
+    border-radius: 30px;
+    color: aliceblue;
+    font-size: 1.6vw;
+    
+}
 .fontDeGoogleParaMastermind{
     font-family: 'Bungee Shade', sans-serif;
 }
@@ -80,11 +90,16 @@ body {
     border: 1px solid white;
     border-radius: 20px;
 }
+
+
 @media(max-width:430px){
     .encabezadoPaginaPrincipal{
         font-size: 17vw;
     } 
     .botonesPrincipales{
+        font-size: 5vw;
+    }
+    .botonesGame{
         font-size: 5vw;
     }
     .divsColoresSelector{
@@ -99,6 +114,9 @@ body {
         font-size: 14vw;
     }
     .botonesPrincipales{
+        font-size: 3vw;
+    }
+    .botonesGame{
         font-size: 3vw;
     }
     .divsColoresSelector{
