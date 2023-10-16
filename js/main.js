@@ -9,7 +9,7 @@ const colorSeleccionadoCuatro=document.querySelector("#colorSeleccionadoCuatro")
 
 
 
-coloresBloques=[localStorage.getItem(colorUno),localStorage.getItem(colorDos),localStorage.getItem(colorTres),localStorage.getItem(colorCuatro)]  
+const coloresBloques=[colorUno.value,colorDos.value,colorTres.value,colorCuatro.value]  
 console.log(coloresBloques)
 
 
@@ -31,3 +31,4 @@ colorTres.addEventListener('input',()=>{
 colorCuatro.addEventListener('input',()=>{
     colorSeleccionadoCuatro.style.background=colorCuatro.value
 })
+
