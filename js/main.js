@@ -12,7 +12,7 @@ const divInteractivoDos = document.querySelector("#divInteractivoDos")
 const divInteractivoTres = document.querySelector("#divInteractivoTres")
 const divInteractivoCuatro = document.querySelector("#divInteractivoCuatro")
 
-const play = () => {
+const selectorDeColores = () => {
     //const coloresBloques = [colorUno.value, colorDos.value, colorTres.value, colorCuatro.value]
 
     // let coloresNoRepetidos = true;
@@ -53,7 +53,7 @@ const goToGame=()=>{
 
 // GAME
 
-
+let arrayDeColores;
 const playGame=()=>{
     document.getElementById("startDivGame").style.display="none"
 
@@ -62,9 +62,78 @@ const playGame=()=>{
     let juegoTres=sessionStorage.getItem("colorJuegoTres")
     let juegoCuatro=sessionStorage.getItem("colorJuegoCuatro")
 
+    arrayDeColores=[juegoUno,juegoDos,juegoTres,juegoCuatro]
+
     divInteractivoUno.style.background=juegoUno
     divInteractivoDos.style.background=juegoDos
     divInteractivoTres.style.background=juegoTres
     divInteractivoCuatro.style.background=juegoCuatro
+
+    
 }
 
+    //LOGICA JAVASCRIPT
+
+    //formación aleatoria:
+
+const arrayNumerosAleatorios=[];
+    const numerosAleatorios=()=>{
+        for(let i=0;i<4;i++){
+            arrayNumerosAleatorios.push(Math.floor(Math.random()*3))
+        }
+        console.log(arrayNumerosAleatorios)
+    }
+
+
+let c=0;
+const numerosComparacion=[]
+    const selector=(num)=>{
+       
+               
+                    const columna = document.getElementById("columna"+c)            
+                        if(columna.id=='columna0'){
+                             numerosAleatorios()
+                            columna.style.background=arrayDeColores[num]
+                            numerosComparacion.push(num)
+                            c++
+                        }else if(columna.id=='columna1'){
+                            columna.style.background=arrayDeColores[num]
+                            numerosComparacion.push(num)
+                            c++
+                        }
+                        else if(columna.id=='columna2'){
+                            columna.style.background=arrayDeColores[num]
+                            numerosComparacion.push(num)
+                            c++
+                        }else if(columna.id=='columna3'){
+                            columna.style.background=arrayDeColores[num]
+                            numerosComparacion.push(num)
+                            comparacion()
+                            c++;
+                        }
+                        
+                }    
+        
+    const comparacion=()=>{
+       // for (let i=0;i<numerosComparacion.length;i++){
+            if(numerosComparacion[0]==arrayNumerosAleatorios[0]){
+                if(numerosComparacion[1]==arrayNumerosAleatorios[1]){
+                    if(numerosComparacion[2]==arrayNumerosAleatorios[2]){
+                        if(numerosComparacion[3]==arrayNumerosAleatorios[3]){
+                            console.log('PEroooo que suerte')
+                        }else{
+                            console.log('JODEEEEER')
+                        }
+                    }else{
+                        console.log('Faltaba una')
+                    }
+                }else{
+                    console.log('casi')
+                }
+            }else{
+                console.log('muy lejos')
+            }
+      //  }
+    }
+    
+    
