@@ -85,7 +85,7 @@ body {
     font-size: 10vw;
 } 
 .divsColoresSelector{
-    width: 100%;
+    width: 90%;
     height: 8vh;
     border: 1px solid white;
     border-radius: 20px;
@@ -97,6 +97,10 @@ body {
     margin-top: 10px;
     width: 60%;
 }
+#colorSeleccionadoUno{width:80%;background-color:#f30505;}
+#colorSeleccionadoDos{width:80%;background-color:#0000ff;}
+#colorSeleccionadoTres{width:80%;background-color:#008000;}
+#colorSeleccionadoCuatro{width:80%;background-color:#ffff00;}
 
 @media(max-width:430px){
     .encabezadoPaginaPrincipal{
@@ -154,3 +158,21 @@ body {
         width: 400px;
     }
 }  
+#startDivGame{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.727);
+    z-index: 1;
+}
+#startDivGame button{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -25px;
+}
