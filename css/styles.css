@@ -62,8 +62,9 @@ body {
     max-width: 200px;
     border: white 1px solid;
     border-radius: 30px;
-    color: aliceblue;
+    color: rgb(187, 195, 118);
     font-size: 1.6vw;
+    font-family: 'Rubik Moonrocks', sans-serif;
 }
 .botonesGame{
     background-color: rgba(4, 4, 4, 0.626);
@@ -76,10 +77,11 @@ body {
     margin-top: 10px;
 }
 .fontDeGoogleParaMastermind{
-    font-family: 'Bungee Shade', sans-serif;
+    color: rgb(213, 158, 54);
+    font-family: 'Fredericka the Great', serif;
 }
 .fontDeGoogleParaMastermind2{
-    font-family: 'Bungee Outline', sans-serif;
+    font-family: 'Fredericka the Great', serif;
 }
 .encabezadoPaginaPrincipal{
     font-size: 10vw;
@@ -158,7 +160,7 @@ body {
         width: 400px;
     }
 }  
-#startDivGame{
+/* #startDivGame{
     position: relative;
     top: 0;
     left: 0;
@@ -175,4 +177,4 @@ body {
     left: 50%;
     margin-left: -50px;
     margin-top: -25px;
-}
+} */

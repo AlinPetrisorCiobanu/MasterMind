@@ -13,15 +13,15 @@ const divInteractivoTres = document.querySelector("#divInteractivoTres")
 const divInteractivoCuatro = document.querySelector("#divInteractivoCuatro")
 
 const selectorDeColores = () => {
-    //const coloresBloques = [colorUno.value, colorDos.value, colorTres.value, colorCuatro.value]
+    const coloresBloques = [colorUno.value, colorDos.value, colorTres.value, colorCuatro.value]
 
-    // let coloresNoRepetidos = true;
-    // if ((coloresNoRepetidos == true) && (coloresBloques[0] != coloresBloques[1]) && (coloresBloques[1] != coloresBloques[2]) && (coloresBloques[2] != coloresBloques[3])) {
-    //     botonStart.style.opacity=100
-    // } else {
-    //     coloresNoRepetidos = false;
-    //     botonStart.style.opacity=0
-    // }
+    let coloresNoRepetidos = true;
+    if ((coloresNoRepetidos == true) && (coloresBloques[0] != coloresBloques[1]) && (coloresBloques[1] != coloresBloques[2]) && (coloresBloques[2] != coloresBloques[3])) {
+        botonStart.style.opacity=100
+    } else {
+        coloresNoRepetidos = false;
+        botonStart.style.opacity=0
+    }
 
 
     colorSeleccionadoUno.style.background = colorUno.value
@@ -51,12 +51,14 @@ const goToGame=()=>{
 
 }
 
+
+
 // GAME
 
 let arrayDeColores;
 const playGame=()=>{
     document.getElementById("startDivGame").style.display="none"
-
+}
     let juegoUno=sessionStorage.getItem("colorJuegoUno")
     let juegoDos=sessionStorage.getItem("colorJuegoDos")
     let juegoTres=sessionStorage.getItem("colorJuegoTres")
@@ -64,13 +66,13 @@ const playGame=()=>{
 
     arrayDeColores=[juegoUno,juegoDos,juegoTres,juegoCuatro]
 
-    divInteractivoUno.style.background=juegoUno
-    divInteractivoDos.style.background=juegoDos
-    divInteractivoTres.style.background=juegoTres
-    divInteractivoCuatro.style.background=juegoCuatro
+    // divInteractivoUno.style.background=juegoUno
+    // divInteractivoDos.style.background=juegoDos
+    // divInteractivoTres.style.background=juegoTres
+    // divInteractivoCuatro.style.background=juegoCuatro
 
     
-}
+
 
     //LOGICA JAVASCRIPT
 
@@ -120,18 +122,18 @@ const numerosComparacion=[]
                 if(numerosComparacion[1]==arrayNumerosAleatorios[1]){
                     if(numerosComparacion[2]==arrayNumerosAleatorios[2]){
                         if(numerosComparacion[3]==arrayNumerosAleatorios[3]){
-                            console.log('PEroooo que suerte')
+                            alert('PEroooo que suerte')
                         }else{
-                            console.log('JODEEEEER')
+                            alert('JODEEEEER')
                         }
                     }else{
-                        console.log('Faltaba una')
+                        alert('Faltaba muy poco')
                     }
                 }else{
-                    console.log('casi')
+                    alert('casi')
                 }
             }else{
-                console.log('muy lejos')
+                alert('muy lejos')
             }
       //  }
     }
