@@ -29,18 +29,6 @@ const selectorDeColores = () => {
     colorSeleccionadoTres.style.background = colorTres.value
     colorSeleccionadoCuatro.style.background = colorCuatro.value
 
-    colorUno.addEventListener('input', () => {
-        colorSeleccionadoUno.style.background = colorUno.value
-    })
-    colorDos.addEventListener('input', () => {
-        colorSeleccionadoDos.style.background = colorDos.value
-    })
-    colorTres.addEventListener('input', () => {
-        colorSeleccionadoTres.style.background = colorTres.value
-    })
-    colorCuatro.addEventListener('input', () => {
-        colorSeleccionadoCuatro.style.background = colorCuatro.value
-    })
     
 }
 const goToGame=()=>{
