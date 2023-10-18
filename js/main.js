@@ -35,33 +35,18 @@ const creadorDeDivsAsignados = (vueltas) => {
         document.querySelector(".creadorDeDivsAsignados").innerHTML += `
                                 <div class="col-6 col-lg-3 justify-content-center align-items-center">
                                     <div class="row justify-content-center">
-                                        <div id="columna0" class="col-11 divsColoresSelector">                                            
+                                        <div id="columna${i}" class="col-11 divsColoresSelector">                                            
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-6 col-lg-3 justify-content-center align-items-center">
-                                    <div class="row justify-content-center">
-                                        <div id="columna1" class="col-11 divsColoresSelector">                                           
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-3 justify-content-center align-items-center">
-                                    <div class="row justify-content-center">
-                                        <div id="columna2" class="col-11 divsColoresSelector">                                           
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-3 justify-content-center align-items-center">
-                                    <div class="row justify-content-center">
-                                        <div id="columna3" class="col-11 divsColoresSelector">                                           
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 espaciadorMedio"></div>`        
+                                </div>` 
+                                if((i==3)||(i==7)||(i==11)||(i==15)||(i==19)||(i==23)||(i==27)||(i==31)||(i==35)){
+                                    document.querySelector(".creadorDeDivsAsignados").innerHTML +=`
+                                    <div class="col-12 espaciadorPequenio"></div>`
+                                }       
     } 
     
 }
-creadorDeDivsAsignados(nrDeIntentos)
+creadorDeDivsAsignados(nrDeIntentos*4)
         //formación aleatoria de Numeros
 const arrayNumerosAleatorios=[];
 const numerosAleatorios=(num)=>{
@@ -77,26 +62,10 @@ numerosAleatorios(nrDeColores)
 let c=0;
 const numerosComparacion=[]
     const selector=(num)=>{
-                    const columna = document.getElementById("columna"+c)            
-                        if(columna.id=='columna0'){
-                             numerosAleatorios()
-                            columna.style.background=paletaDeColores[num]
-                            numerosComparacion.push(num)
-                            c++
-                        }else if(columna.id=='columna1'){
-                            columna.style.background=paletaDeColores[num]
-                            numerosComparacion.push(num)
-                            c++
-                        }
-                        else if(columna.id=='columna2'){
-                            columna.style.background=paletaDeColores[num]
-                            numerosComparacion.push(num)
-                            c++
-                        }else if(columna.id=='columna3'){
-                            columna.style.background=paletaDeColores[num]
-                            numerosComparacion.push(num)
-                            c++;
-                        }                        
+           const columna = document.getElementById(`columna${c}`)
+           columna.style.background=paletaDeColores[num]
+           numerosComparacion.push(num)
+            c++;                       
                 }  
 
                 const verificacion=()=>{
