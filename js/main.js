@@ -1,3 +1,84 @@
+    //Saque de todos los datos guardados anteriromente -->
+const nombreJugador=sessionStorage.getItem("nombreJugador")
+const dificultad=sessionStorage.getItem("dificultad")
+const nrDeColores=sessionStorage.getItem("colores")
+const nrDeIntentos=sessionStorage.getItem("intentos")
+const paletaDeColores = [];
+const sacarColores = (colores) => {
+    for ( let i = 0 ; i<colores ; i++){
+        paletaDeColores[i]=sessionStorage.getItem("color"+i)
+    }
+}
+sacarColores(nrDeColores)
+    //Asignacion de datos en la web
+document.querySelector('.nombreJugador').innerHTML=nombreJugador
+document.querySelector('.nombreDificutad').innerHTML=`Level : ${dificultad}`
+const creadorDeDivsInteractivos = (vueltas) => {
+    for( let i = 0 ; i < vueltas ; i++){
+        document.querySelector(".incorporacionDeDivsInteractivos").innerHTML += `<div class="col-12">
+                                                                            <div class="row justify-content-center">
+                                                                                <div id="divInteractivo${i}" class="col-11 divClickGetColorGame" onclick="selector(${i})"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 espaciadorPequenio"></div>`        
+    } 
+}
+creadorDeDivsInteractivos(nrDeColores)
+const asignarColoresDeLaPaleta = (color) => {
+    for ( let i = 0 ; i<color.length ; i++){
+        document.getElementById(`divInteractivo${i}`).style.backgroundColor=color[i]   
+    }
+    
+}
+asignarColoresDeLaPaleta(paletaDeColores)
+const creadorDeDivsAsignados = (vueltas) => {
+    for( let i = 0 ; i < vueltas ; i++){
+        document.querySelector(".creadorDeDivsAsignados").innerHTML += `
+                                <div class="col-6 col-lg-3 justify-content-center align-items-center">
+                                    <div class="row justify-content-center">
+                                        <div id="columna0" class="col-11 divsColoresSelector">                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 justify-content-center align-items-center">
+                                    <div class="row justify-content-center">
+                                        <div id="columna1" class="col-11 divsColoresSelector">                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 justify-content-center align-items-center">
+                                    <div class="row justify-content-center">
+                                        <div id="columna2" class="col-11 divsColoresSelector">                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 justify-content-center align-items-center">
+                                    <div class="row justify-content-center">
+                                        <div id="columna3" class="col-11 divsColoresSelector">                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 espaciadorMedio"></div>`        
+    } 
+    
+}
+creadorDeDivsAsignados(nrDeIntentos)
+
+
+
+const selector=()=>{
+
+}
+
+
+
+
+
+
+
+
+
+/*
 const colorUno = document.querySelector("#colorUno")
 const colorDos = document.querySelector("#colorDos")
 const colorTres = document.querySelector("#colorTres")
@@ -126,4 +207,4 @@ const numerosComparacion=[]
       //  }
     }
     
-    
+    */
