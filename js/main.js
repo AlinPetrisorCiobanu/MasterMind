@@ -50,19 +50,22 @@ const arrayNumerosAleatorios = [];
 creadorDeDivsAsignados(nrDeIntentos * 4)
 //formación aleatoria de Numeros
 
-const numerosAleatorios = (num) => {
+const numerosAleatorios = (num,colores) => {
     /*
     var lista = [1,2,3,4,5,6,7,8,9];
 lista = lista.sort(function() {return Math.random() - 0.5});
 document.write(lista)
-    */
-    let numeros = [0,1,2,3,4,5,6];
+    */ 
+   let numeros = [];
+   for( let a = 0; a<num ; a++){
+        numeros.push(a)
+   }
+    numeros = numeros.sort(function() {return Math.random() - 0.5})
     for (let i = 0; i <= 3; i++) {
-        arrayNumerosAleatorios.push(Math.floor(Math.random() * num))
+        arrayNumerosAleatorios[i]=colores[numeros[i]]
     }
-   console.log(arrayNumerosAleatorios)
 }
-numerosAleatorios(nrDeColores)
+numerosAleatorios(nrDeColores,paletaDeColores)
 
 class Contador {
     valor = 0;
@@ -103,20 +106,39 @@ const ejecucion = (num, valor) => {
 
         if (num >= 0) {
             columna.style.background = paletaDeColores[num]
-            numerosComparacion.push(num)
+            numerosComparacion.push(paletaDeColores[num])
         }
         else if (num == 'numeroOculto') {
             columna.style.background = '#ffffff00'
-            numerosComparacion.shift()
+            numerosComparacion.pop()
         }
     }
-
-    console.log(numerosComparacion)
 }
 const verificacion = (array1, array2) => {
     console.log(array1)
     console.log(array2)
-    if ((array1[0] == array2[0]) && (array1[1] == array2[1]) && (array1[2] == array2[2]) && (array1[3] == array2[3])) return console.log('perfecto')
-   
+
+    if(array1.length===4){
+            if (array1[0]===array2[0]){
+                console.log('la primera esta bien')
+            }
+            if (array1[1]===array2[1]){
+                console.log('la segunda esta bien')
+            }
+            if (array1[2]===array2[2]){
+                console.log('la tercera esta bien')
+            }
+            if (array1[3]===array2[3]){
+                console.log('la cuarta esta bien')
+            }
+            if(((array1[0]===array2[0])&&(array1[1]===array2[1]))&&((array1[2]===array2[2])&&(array1[3]===array2[3]))){
+                console.log('perfecto')
+            }
+        }
+
+    else{
+        console.log('por favor rellene los colores')
+    }
+                   
 
 }
