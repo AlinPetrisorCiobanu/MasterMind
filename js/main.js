@@ -116,125 +116,156 @@ class SelectorDeColumnaComprobacion {
     }
 }
 
+class PosicionArray {
+    posicion = 0;
+    constructor(){
+        this.posicion=0
+    }
+    suma(){
+        this.posicion++
+    }
+    resta(){
+        this.posicion--
+    }
+    reinicio(){
+        this.posicion=0
+    }
+}
+
 let contadorColumna = new ContadorColumna()
 let contadorFila = new ContadorFila()
 let selectorDeColumna = new SelectorDeColumnaComprobacion()
-
+let posicionArr = new PosicionArray()
 
 console.log(selectorDeColumna)
 
-const numerosComparacion = []
+let numerosComparacion = []
 
 const selector = (num, numContador,fila) => {
     if ((numContador.valor >= 0) && (numContador.valor < fila.max)) {
         ejecucion(num, numContador.valor,fila.max)
         contadorColumna.suma()
+        posicionArr.suma()
     }
 }
 
-const borrar = (nr, numContador) => {
+const borrar = ( numContador) => {
     if ((numContador.valor >= 1)&&(numContador.valor>contadorFila.min)) {
         nr = 'numeroOculto'
         contadorColumna.resta()
+        posicionArr.resta()
         ejecucion(nr, numContador.valor)
     }
 }
 
 
 const ejecucion = (num, valor,fila) => {
-    console.log(valor)
     if ((numerosComparacion.length < fila) || (num == 'numeroOculto')) {
         const columna = document.getElementById(`columna${valor}`)
 
         if (num >= 0) {
             columna.style.background = paletaDeColores[num]
-            numerosComparacion.push(paletaDeColores[num])
+            numerosComparacion[posicionArr.posicion]=paletaDeColores[num]
         }
         else if (num == 'numeroOculto') {
             columna.style.background = '#ffffff00'
             columna.style.borderWidth = `${1}px`
             columna.style.borderColor = `#ffffff`
-            numerosComparacion.pop()
+            numerosComparacion[posicionArr.posicion]=''
         }
     }
 }
 const verificacion = (array1, array2,column) => {
     console.log(array1)
     console.log(array2)
-    console.log(column.colUno)
-    console.log(column.colDos)
-    console.log(column.colTres)
-    console.log(column.colCuatro)
 
 
 
 
     if (array1.length === 4) {
-        for (let i = 0; i < array1.length; i++) {
-            if ((array1[i] != array2[i]) && (array1[i]) == array2[0]) {
-                const columna = document.getElementById(`columna${column.colUno}`)
-                columna.style.borderWidth = `${4}px`
-                columna.style.borderColor = `#ffff00`
+
+        for (let i = column.colUno; i <=column.colCuatro; i++) {
+            if(((array1[0]!=array2[0])&&(array1[1]!=array2[1]))&&((array1[2]!=array2[2])&&(array1[3]!=array2[3]))){
+
+                    if ((array1[1] === array2[0])||(array1[2] === array2[0])||(array1[3] === array2[0])) {
+                        const columna = document.getElementById(`columna${i}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }
+
+                    else if ((array1[0] === array2[1])||(array1[2] === array2[1])||(array1[3] === array2[1])) {
+                        const columna = document.getElementById(`columna${i}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }
+
+                    else if ((array1[0] === array2[2])||(array1[1] === array2[2])||(array1[3] === array2[2]))  {
+                        const columna = document.getElementById(`columna${i}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }
+
+                    else if ((array1[0] === array2[3])||(array1[1] === array2[3])||(array1[2] === array2[3]))  {
+                        const columna = document.getElementById(`columna${i}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }else{
+                        const columna = document.getElementById(`columna${i}`)
+                        columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
+                    } 
+
+                        
+            }else{
+
+
+                if (array1[0] === array2[0]) {
+                    const columna = document.getElementById(`columna${column.colUno}`)
+                    columna.style.borderWidth = `${6}px`
+                    columna.style.borderColor = `#44ff00`         
+                }
+                if (array1[1] === array2[1]) {
+                    const columna = document.getElementById(`columna${column.colDos}`)
+                    columna.style.borderWidth = `${6}px`
+                    columna.style.borderColor = `#44ff00`            
+                }
+                if (array1[2] === array2[2]) {
+                    const columna = document.getElementById(`columna${column.colTres}`)
+                    columna.style.borderWidth = `${6}px`
+                    columna.style.borderColor = `#44ff00`            
+                }
+                if (array1[3] === array2[3]) {
+                    const columna = document.getElementById(`columna${column.colCuatro}`)
+                    columna.style.borderWidth = `${6}px`
+                    columna.style.borderColor = `#44ff00`        
+                }
+                if (((array1[0] === array2[0]) && (array1[1] === array2[1])) && ((array1[2] === array2[2]) && (array1[3] === array2[3]))) {
+                    console.log('perfecto')
+                }
+
+
             }
-            else if ((array1[i] != array2[i]) && (array1[i]) == array2[1]) {
-                const columna = document.getElementById(`columna${column.colDos}`)
-                columna.style.borderWidth = `${4}px`
-                columna.style.borderColor = `#ffff00`
-            }
-            else if ((array1[i] != array2[i]) && (array1[i]) == array2[2]) {
-                const columna = document.getElementById(`columna${column.colTres}`)
-                columna.style.borderWidth = `${4}px`
-                columna.style.borderColor = `#ffff00`
-            }
-            else if ((array1[i] != array2[i]) && (array1[i]) == array2[3]) {
-                const columna = document.getElementById(`columna${column.colCuatro}`)
-                columna.style.borderWidth = `${4}px`
-                columna.style.borderColor = `#ffff00`
-            }else if(array1[i] != array2[i]){
-                
-                const columna = document.getElementById(`columna${i}`)
-                columna.style.borderWidth = `${5}px`
-                columna.style.borderColor = `#970f0f`
-            }
+           
             
-            for( let i = 0 ; i<array1.length ; i++){
-                numerosComparacion.pop()
-                numerosComparacion.shift()
+
+            // else if(array1[i] != array2[i]){
+                
+            //     const columna = document.getElementById(`columna${i}`)
+            //     columna.style.borderWidth = `${5}px`
+            //     columna.style.borderColor = `#970f0f`
+            // }
+            
+            // for( let i = 0 ; i<array1.length ; i++){
+            //     numerosComparacion.pop()
+            //     numerosComparacion.shift()
+            // }
             }
-        }
 
 
-
-
-
-        if (array1[0] === array2[0]) {
-            const columna = document.getElementById(`columna${column.colUno}`)
-            columna.style.borderWidth = `${6}px`
-            columna.style.borderColor = `#44ff00`         
-        }
-        if (array1[1] === array2[1]) {
-            const columna = document.getElementById(`columna${column.colDos}`)
-            columna.style.borderWidth = `${6}px`
-            columna.style.borderColor = `#44ff00`            
-        }
-        if (array1[2] === array2[2]) {
-            const columna = document.getElementById(`columna${column.colTres}`)
-            columna.style.borderWidth = `${6}px`
-            columna.style.borderColor = `#44ff00`            
-        }
-        if (array1[3] === array2[3]) {
-            const columna = document.getElementById(`columna${column.colCuatro}`)
-            columna.style.borderWidth = `${6}px`
-            columna.style.borderColor = `#44ff00`        
-        }
-        if (((array1[0] === array2[0]) && (array1[1] === array2[1])) && ((array1[2] === array2[2]) && (array1[3] === array2[3]))) {
-            console.log('perfecto')
-        }
-
-
-
+    
     contadorFila.suma1()
     contadorFila.suma2()
+    posicionArr.reinicio()
     selectorDeColumna.suma1()
     selectorDeColumna.suma2()
     selectorDeColumna.suma3()
