@@ -179,43 +179,71 @@ const verificacion = (array1, array2,column) => {
     console.log(array1)
     console.log(array2)
 
+let numSum = 0;
+    if ((array1.length === 4)&&(array1[0]!='')) {
 
+        for (let i = 0; i <=array2.length; i++) {
+            if(array1[i]!=array2[i]){
+                console.log(i)
 
-
-    if (array1.length === 4) {
-
-        for (let i = column.colUno; i <=column.colCuatro; i++) {
-            if(((array1[0]!=array2[0])&&(array1[1]!=array2[1]))&&((array1[2]!=array2[2])&&(array1[3]!=array2[3]))){
-
-                    if ((array1[1] === array2[0])||(array1[2] === array2[0])||(array1[3] === array2[0])) {
-                        const columna = document.getElementById(`columna${i}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
-                    }
-
-                    else if ((array1[0] === array2[1])||(array1[2] === array2[1])||(array1[3] === array2[1])) {
-                        const columna = document.getElementById(`columna${i}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
-                    }
-
-                    else if ((array1[0] === array2[2])||(array1[1] === array2[2])||(array1[3] === array2[2]))  {
-                        const columna = document.getElementById(`columna${i}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
-                    }
-
-                    else if ((array1[0] === array2[3])||(array1[1] === array2[3])||(array1[2] === array2[3]))  {
-                        const columna = document.getElementById(`columna${i}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
-                    }else{
-                        const columna = document.getElementById(`columna${i}`)
-                        columna.style.borderWidth = `${5}px`
-                        columna.style.borderColor = `#970f0f`
-                    } 
-
+                
+                    if ((i==0)) {
                         
+                        const columna = document.getElementById(`columna${column.colUno}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }
+
+                    else if (i==1){
+                        
+                        const columna = document.getElementById(`columna${column.colDos}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }
+
+                    else if (i==2)  {
+                        
+                        const columna = document.getElementById(`columna${column.colTres}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }
+
+                    else if (i==3)  {
+                        
+                        const columna = document.getElementById(`columna${column.colCuatro}`)
+                        columna.style.borderWidth = `${4}px`
+                        columna.style.borderColor = `#ffff00`
+                    }
+
+                    if(((array1[i]!=array2[0])&&(array1[i]!=array2[1]))&&((array1[i]!=array2[2])&&(array1[i]!=array2[3]))){
+                        if(i==0){
+                            const columna = document.getElementById(`columna${column.colUno}`)
+                            columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
+                        }
+                        if(i==1){
+                            const columna = document.getElementById(`columna${column.colDos}`)
+                            columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
+                        }
+                        if(i==2){
+                            const columna = document.getElementById(`columna${column.colTres}`)
+                            columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
+                        }
+                        if(i==3){
+                            const columna = document.getElementById(`columna${column.colCuatro}`)
+                            columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
+                        }
+                    } 
+                    
+
+                    // for( let i = 0 ; i<array1.length ; i++){
+                    //     numerosComparacion.pop()
+                    //     numerosComparacion.shift()
+                    // }
+                       numSum++; 
             }else{
 
 
@@ -255,10 +283,8 @@ const verificacion = (array1, array2,column) => {
             //     columna.style.borderColor = `#970f0f`
             // }
             
-            // for( let i = 0 ; i<array1.length ; i++){
-            //     numerosComparacion.pop()
-            //     numerosComparacion.shift()
-            // }
+                
+            
             }
 
 
