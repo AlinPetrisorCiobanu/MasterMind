@@ -52,7 +52,7 @@ creadorDeDivsAsignados(nrDeIntentos * 4)
 //formación aleatoria de Numeros
 
 const numerosAleatorios = (num, colores) => {
-  
+
     let numeros = [];
     for (let a = 0; a < num; a++) {
         numeros.push(a)
@@ -77,18 +77,18 @@ class ContadorColumna {
     }
 }
 
-class ContadorFila { 
+class ContadorFila {
     min = 0;
-    max =4;
-    constructor(){
-        this.min=0;
-        this.max=4;
+    max = 4;
+    constructor() {
+        this.min = 0;
+        this.max = 4;
     }
-    suma1(){
-        this.min = this.min+4
+    suma1() {
+        this.min = this.min + 4
     }
-    suma2(){
-        this.max = this.max+4
+    suma2() {
+        this.max = this.max + 4
     }
 }
 class SelectorDeColumnaComprobacion {
@@ -96,39 +96,39 @@ class SelectorDeColumnaComprobacion {
     colDos = 1;
     colTres = 2;
     colCuatro = 3;
-    constructor(){
-        this.colUno =0
-        this.colDos =1
-        this.colTres =2
-        this.colCuatro =3
+    constructor() {
+        this.colUno = 0
+        this.colDos = 1
+        this.colTres = 2
+        this.colCuatro = 3
     }
-    suma1(){
-        this.colUno=this.colUno+4;       
+    suma1() {
+        this.colUno = this.colUno + 4;
     }
-    suma2(){
-        this.colDos=this.colDos+4;
+    suma2() {
+        this.colDos = this.colDos + 4;
     }
-    suma3(){
-        this.colTres=this.colTres+4;
+    suma3() {
+        this.colTres = this.colTres + 4;
     }
-    suma4(){
-        this.colCuatro=this.colCuatro+4;
+    suma4() {
+        this.colCuatro = this.colCuatro + 4;
     }
 }
 
 class PosicionArray {
     posicion = 0;
-    constructor(){
-        this.posicion=0
+    constructor() {
+        this.posicion = 0
     }
-    suma(){
+    suma() {
         this.posicion++
     }
-    resta(){
+    resta() {
         this.posicion--
     }
-    reinicio(){
-        this.posicion=0
+    reinicio() {
+        this.posicion = 0
     }
 }
 
@@ -141,31 +141,30 @@ console.log(selectorDeColumna)
 
 let numerosComparacion = []
 
-const selector = (num, numContador,fila) => {
+const selector = (num, numContador, fila) => {
     if ((numContador.valor >= 0) && (numContador.valor < fila.max)) {
-        ejecucion(num, numContador.valor,fila.max)
+        ejecucion(num, numContador.valor, fila.max)
         contadorColumna.suma()
         posicionArr.suma()
     }
 }
 
-const borrar = ( numContador) => {
-    if ((numContador.valor >= 1)&&(numContador.valor>contadorFila.min)) {
+const borrar = (numContador) => {
+    if ((numContador.valor >= 1) && (numContador.valor > contadorFila.min)) {
         nr = 'numeroOculto'
         contadorColumna.resta()
         posicionArr.resta()
-        ejecucion(nr, numContador.valor)
+        ejecucion(nr, numContador.valor, contadorFila.max)
     }
 }
 
-
-const ejecucion = (num, valor,fila) => {
-    if ((numerosComparacion.length < fila) || (num == 'numeroOculto')) {
+const ejecucion = (num, valor, fila) => {
+    console.log(numerosComparacion)
+    if ((numerosComparacion.length <= fila) || (num == 'numeroOculto')) {
         const columna = document.getElementById(`columna${valor}`)
-
         if (num >= 0) {
             columna.style.background = paletaDeColores[num]
-            numerosComparacion[posicionArr.posicion]=paletaDeColores[num]
+            numerosComparacion[posicionArr.posicion] = paletaDeColores[num]
         }
         else if (num == 'numeroOculto') {
             columna.style.background = '#ffffff00'
@@ -175,132 +174,100 @@ const ejecucion = (num, valor,fila) => {
         }
     }
 }
-const verificacion = (array1, array2,column) => {
+
+const verificacion = (array1, array2, column) => {
     console.log(array1)
     console.log(array2)
+    console.log(numerosComparacion)
 
-let numSum = 0;
-    if ((array1.length === 4)&&(array1[0]!='')) {
+    if ((array1.length === 4) && (array1[0] != '')) {
 
-        for (let i = 0; i <=array2.length; i++) {
-            if(array1[i]!=array2[i]){
-                console.log(i)
+        for (let i = 0; i <= array2.length; i++) {
+            if (array1[i] != array2[i]) {
 
-                
-                    if ((i==0)) {
-                        
+                if ((i == 0)) {
+                    const columna = document.getElementById(`columna${column.colUno}`)
+                    columna.style.borderWidth = `${4}px`
+                    columna.style.borderColor = `#ffff00`
+                }
+                else if (i == 1) {
+                    const columna = document.getElementById(`columna${column.colDos}`)
+                    columna.style.borderWidth = `${4}px`
+                    columna.style.borderColor = `#ffff00`
+                }
+                else if (i == 2) {
+                    const columna = document.getElementById(`columna${column.colTres}`)
+                    columna.style.borderWidth = `${4}px`
+                    columna.style.borderColor = `#ffff00`
+                }
+                else if (i == 3) {
+                    const columna = document.getElementById(`columna${column.colCuatro}`)
+                    columna.style.borderWidth = `${4}px`
+                    columna.style.borderColor = `#ffff00`
+                }
+
+                if (((array1[i] != array2[0]) && (array1[i] != array2[1])) && ((array1[i] != array2[2]) && (array1[i] != array2[3]))) {
+                    if (i == 0) {
                         const columna = document.getElementById(`columna${column.colUno}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
+                        columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
                     }
-
-                    else if (i==1){
-                        
+                    if (i == 1) {
                         const columna = document.getElementById(`columna${column.colDos}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
+                        columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
                     }
-
-                    else if (i==2)  {
-                        
+                    if (i == 2) {
                         const columna = document.getElementById(`columna${column.colTres}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
+                        columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
                     }
-
-                    else if (i==3)  {
-                        
+                    if (i == 3) {
                         const columna = document.getElementById(`columna${column.colCuatro}`)
-                        columna.style.borderWidth = `${4}px`
-                        columna.style.borderColor = `#ffff00`
+                        columna.style.borderWidth = `${5}px`
+                        columna.style.borderColor = `#970f0f`
                     }
+                }
 
-                    if(((array1[i]!=array2[0])&&(array1[i]!=array2[1]))&&((array1[i]!=array2[2])&&(array1[i]!=array2[3]))){
-                        if(i==0){
-                            const columna = document.getElementById(`columna${column.colUno}`)
-                            columna.style.borderWidth = `${5}px`
-                        columna.style.borderColor = `#970f0f`
-                        }
-                        if(i==1){
-                            const columna = document.getElementById(`columna${column.colDos}`)
-                            columna.style.borderWidth = `${5}px`
-                        columna.style.borderColor = `#970f0f`
-                        }
-                        if(i==2){
-                            const columna = document.getElementById(`columna${column.colTres}`)
-                            columna.style.borderWidth = `${5}px`
-                        columna.style.borderColor = `#970f0f`
-                        }
-                        if(i==3){
-                            const columna = document.getElementById(`columna${column.colCuatro}`)
-                            columna.style.borderWidth = `${5}px`
-                        columna.style.borderColor = `#970f0f`
-                        }
-                    } 
-                    
-
-                    // for( let i = 0 ; i<array1.length ; i++){
-                    //     numerosComparacion.pop()
-                    //     numerosComparacion.shift()
-                    // }
-                       numSum++; 
-            }else{
-
+            } else {
 
                 if (array1[0] === array2[0]) {
                     const columna = document.getElementById(`columna${column.colUno}`)
                     columna.style.borderWidth = `${6}px`
-                    columna.style.borderColor = `#44ff00`         
+                    columna.style.borderColor = `#44ff00`
                 }
                 if (array1[1] === array2[1]) {
                     const columna = document.getElementById(`columna${column.colDos}`)
                     columna.style.borderWidth = `${6}px`
-                    columna.style.borderColor = `#44ff00`            
+                    columna.style.borderColor = `#44ff00`
                 }
                 if (array1[2] === array2[2]) {
                     const columna = document.getElementById(`columna${column.colTres}`)
                     columna.style.borderWidth = `${6}px`
-                    columna.style.borderColor = `#44ff00`            
+                    columna.style.borderColor = `#44ff00`
                 }
                 if (array1[3] === array2[3]) {
                     const columna = document.getElementById(`columna${column.colCuatro}`)
                     columna.style.borderWidth = `${6}px`
-                    columna.style.borderColor = `#44ff00`        
+                    columna.style.borderColor = `#44ff00`
                 }
                 if (((array1[0] === array2[0]) && (array1[1] === array2[1])) && ((array1[2] === array2[2]) && (array1[3] === array2[3]))) {
-                    console.log('perfecto')
+                    alert('HAS GANADO')
                 }
-
-
             }
-           
-            
-
-            // else if(array1[i] != array2[i]){
-                
-            //     const columna = document.getElementById(`columna${i}`)
-            //     columna.style.borderWidth = `${5}px`
-            //     columna.style.borderColor = `#970f0f`
-            // }
-            
-                
-            
-            }
-
-
-    
-    contadorFila.suma1()
-    contadorFila.suma2()
-    posicionArr.reinicio()
-    selectorDeColumna.suma1()
-    selectorDeColumna.suma2()
-    selectorDeColumna.suma3()
-    selectorDeColumna.suma4()
-
+        }
+        contadorFila.suma1()
+        contadorFila.suma2()
+        posicionArr.reinicio()
+        selectorDeColumna.suma1()
+        selectorDeColumna.suma2()
+        selectorDeColumna.suma3()
+        selectorDeColumna.suma4()
+        numerosComparacion[posicionArr.posicion]=''
     }
     else {
 
         console.log('por favor rellene los colores')
     }
-    
+
 }
