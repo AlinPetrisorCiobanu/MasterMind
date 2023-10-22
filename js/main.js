@@ -159,7 +159,6 @@ const borrar = (numContador) => {
 }
 
 const ejecucion = (num, valor, fila) => {
-    console.log(numerosComparacion)
     if ((numerosComparacion.length <= fila) || (num == 'numeroOculto')) {
         const columna = document.getElementById(`columna${valor}`)
         if (num >= 0) {
@@ -176,10 +175,6 @@ const ejecucion = (num, valor, fila) => {
 }
 
 const verificacion = (array1, array2, column) => {
-    console.log(array1)
-    console.log(array2)
-    console.log(numerosComparacion)
-
     if ((array1.length === 4) && (array1[0] != '')) {
 
         for (let i = 0; i <= array2.length; i++) {
@@ -252,7 +247,8 @@ const verificacion = (array1, array2, column) => {
                     columna.style.borderColor = `#44ff00`
                 }
                 if (((array1[0] === array2[0]) && (array1[1] === array2[1])) && ((array1[2] === array2[2]) && (array1[3] === array2[3]))) {
-                    alert('HAS GANADO')
+                    window.location.href = "ganador.html"
+                    sessionStorage.setItem("ganador","HAS GANADO")
                 }
             }
         }
@@ -269,5 +265,8 @@ const verificacion = (array1, array2, column) => {
 
         console.log('por favor rellene los colores')
     }
-
+    if(contadorColumna.valor===nrDeIntentos*4){
+        sessionStorage.setItem("ganador","Has Perdido")
+        window.location.href = "ganador.html"
+    }
 }
