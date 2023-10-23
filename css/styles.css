@@ -38,11 +38,11 @@ body {
 }
 /* ajuste de tamaño los 2 divs con los parrafos de About. */
 .divInstruccionesMasterMindParrafoDeArriba {
-    height: 50vh;
+    height: 30vh;
     border-radius: 10px;
 }
 .divInstruccionesMasterMindParrafoDeAbajo {
-    height: 20vh;
+    height: 30vh;
     border-radius: 10px;
 }
 ::-webkit-scrollbar {
@@ -53,11 +53,11 @@ body {
 .botonesPrincipales{
     background-color: rgba(4, 4, 4, 0.626);
     width: 40vw;
-    max-width: 200px;
+    max-width: 240px;
     border: white 1px solid;
     border-radius: 30px;
     color: rgb(187, 195, 118);
-    font-size: 1.6vw;
+    font-size: 1.5vw;
     font-family: 'Rubik Moonrocks', sans-serif;
 }
     /*Diseño de los fonts*/
@@ -65,8 +65,10 @@ body {
     color: rgb(213, 158, 54);
     font-family: 'Fredericka the Great', serif;
 }
+
 .fontDeGoogleParaMastermind2{
     font-family: 'Fredericka the Great', serif;
+    font-size: 2vw;
 }
 .encabezadoPaginaPrincipal{
     font-size: 10vw;
@@ -96,6 +98,12 @@ body {
     height: 8vh;
     border: 1px solid white;
     border-radius: 20px;
+}
+.verdeLima{
+    color: greenyellow;
+}
+.amrillo{
+    color: yellow;
 }
     /*Diseño media-Querry reajuste de visualización*/
 @media(max-width:430px){

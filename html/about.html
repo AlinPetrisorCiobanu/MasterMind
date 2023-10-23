@@ -3,38 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
     <title>About</title>
 </head>
 <body>
-    <div class="container-fluid bg-warning altura">
-        <div class="container bg-dark altura text-white text-center d-flex justify-content-center align-items-center">
+    <div class="container-fluid backgroundImagen altura">
+        <div class="container altura text-white text-center d-flex justify-content-center align-items-center">
             <div class="row anchoCompleto justify-content-center">
                 <div class="col-10 text-start">
-                    <!-- temporal retroceso a inicio -->
-                    <a href="../index.html"><h1>How to Play:</h1></a>
+                    <h1 class="fontDeGoogleParaMastermind">MasterMind</h1>
+                    <h2 class="fontDeGoogleParaMastermind">Como Se Juega</h2>
                 </div>
+                <div class="col-12 espaciadorMedio"></div>
                 <div class="col-12">
                     <div class="row justify-content-center">
-                        <div class="col-11 bg-primary divInstruccionesMasterMindParrafoDeArriba overflowScroll">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nemo tenetur officiis explicabo 
-                            rerum? Maiores repellendus obcaecati nostrum soluta nulla corrupti voluptatem ipsa quae quasi, quod
-                             magni dicta. Nemo, odio!
-                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nemo tenetur officiis explicabo 
-                            rerum? Maiores repellendus obcaecati nostrum soluta nulla corrupti voluptatem ipsa quae quasi, quod
-                             magni dicta. Nemo, odio!
-                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nemo tenetur officiis explicabo 
-
+                        <div class="col-5 text-start divInstruccionesMasterMindParrafoDeArriba overflowScroll">
+                            <h6 class="fontDeGoogleParaMastermind">Instrucciónes</h6>
+                           <p>1. El primer paso es introducir el nombre del jugador.</p> 
+                           <p>2. El Segundo paso selecciónas la dificultad del Juego</p> 
+                           <p>3. Selecciónas los colores deseados para Jugar</p>
+                           <p>4. Automaticamente se forma una cadena de colores que teneoms que averiguar.</p>
+                        </div>
+                        <div class="col-6 text-start divInstruccionesMasterMindParrafoDeArriba overflowScroll">
+                           <h6 class="fontDeGoogleParaMastermind">El Juego</h6>
+                           <p>En la parte Izquierda tenemos el nombre del Jugador y el lvl de dificultad</p>
+                           <p>Justo debajo tenemos los colores selectores, que son los que hemos selecciónado para jugar</p>
+                           <p>Y debajotenemos los botones de borrar la ultima opción seleccionada y el boton de verificar</p>
+                           <p>En el lado centro-derecha tenemos los colores que vamos a asignar con los selectores, "HACIENDO CLICK" en los colores</p>
+                        </div>
+                    </div>
+                    <div class="row"><div class="col espaciadorPequenio"></div></div>
+                    <div class="row justify-content-center">
+                        <div class="col-11 divInstruccionesMasterMindParrafoDeAbajo overflowScroll">
+                            <h5 class="text-center fontDeGoogleParaMastermind">A Jugar</h5>
+                            <p>A empezar el juego, para cada lvl tenemos un numero de intentos, para el mas facil 10 y para el
+                                mas dificil solo 6, la combinación consta de 4 colores</p>
+                            <hr>
+                            <p> 1.0 Por cada acierto los bordes del cuadrado se pondran de <span class="verdeLima"> COLOR VERDE LIMA</span> </p> 
+                            <p> 2.0 Si no es Acierto pero el color si esta en la combinación el borde se pondra de <span class="amrillo"> COLOR AMARILLO</span> </p>
+                            <p> 3.0 Si no es Acierto y tampoco esta en la combinación , el borde se pondra de <span class="text-danger"> COLOR ROJO</span></p>   
                             </div>
                     </div>
-                    <div class="row"><div class="col espaciador-mediano"></div></div>
-                    <div class="row justify-content-center">
-                        <div class="col-11 bg-danger divInstruccionesMasterMindParrafoDeAbajo overflowScroll">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nemo tenetur officiis explicabo
-                             rerum? Maiores repellendus obcaecati nostrum soluta nulla corrupti voluptatem ipsa 
-                             quae quasi, quod magni dicta. Nemo, odio!
+                    <div class="row"><div class="col-12 espaciadorPequenio"></div></div>
+                    <div class="row">
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <div class="row">
+                                <div class="col">                                    
+                                        <a href="../index.html"><button class="botonesPrincipales">Inicio</button></a>                                    
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <div class="row">
+                                <div class="col">                                    
+                                        <a href="nickname.html"><button class="botonesPrincipales">Start</button></a>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"><div class="col espaciador"></div></div>
                     </div>
                 </div>
             </div>
