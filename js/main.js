@@ -4,12 +4,15 @@ const dificultad = sessionStorage.getItem("dificultad")
 const nrDeColores = sessionStorage.getItem("colores")
 const nrDeIntentos = sessionStorage.getItem("intentos")
 const paletaDeColores = [];
-const sacarColores = (colores) => {
+const arrayNumerosAleatorios = [];
+let numerosComparacion = [];
+
+( (colores) => {
     for (let i = 0; i < colores; i++) {
         paletaDeColores[i] = sessionStorage.getItem("color" + i)
     }
-}
-sacarColores(nrDeColores)
+})(nrDeColores)
+
 //Asignacion de datos en la web
 document.querySelector('.nombreJugador').innerHTML = nombreJugador
 document.querySelector('.nombreDificutad').innerHTML = `Level : ${dificultad}`
@@ -24,12 +27,15 @@ const creadorDeDivsInteractivos = (vueltas) => {
         <div class="col-12 espaciadorPequenio"></div>`
     }
 }
+
 creadorDeDivsInteractivos(nrDeColores)
+
 const asignarColoresDeLaPaleta = (color) => {
     for (let i = 0; i < color.length; i++) {
         document.getElementById(`divInteractivo${i}`).style.backgroundColor = color[i]
     }
 }
+
 asignarColoresDeLaPaleta(paletaDeColores)
 const creadorDeDivsAsignados = (vueltas) => {
     for (let i = 0; i < vueltas; i++) {
@@ -45,10 +51,10 @@ const creadorDeDivsAsignados = (vueltas) => {
                                     <div class="col-12 espaciadorPequenio"></div>`
         }
     }
-
 }
-const arrayNumerosAleatorios = [];
+
 creadorDeDivsAsignados(nrDeIntentos * 4)
+
 //formación aleatoria de Numeros
 
 const numerosAleatorios = (num, colores) => {
@@ -62,6 +68,7 @@ const numerosAleatorios = (num, colores) => {
         arrayNumerosAleatorios[i] = colores[numeros[i]]
     }
 }
+
 numerosAleatorios(nrDeColores, paletaDeColores)
 
 class ContadorColumna {
@@ -91,6 +98,7 @@ class ContadorFila {
         this.max = this.max + 4
     }
 }
+
 class SelectorDeColumnaComprobacion {
     colUno = 0;
     colDos = 1;
@@ -137,10 +145,6 @@ let contadorFila = new ContadorFila()
 let selectorDeColumna = new SelectorDeColumnaComprobacion()
 let posicionArr = new PosicionArray()
 
-console.log(selectorDeColumna)
-
-let numerosComparacion = []
-
 const selector = (num, numContador, fila) => {
     if ((numContador.valor >= 0) && (numContador.valor < fila.max)) {
         ejecucion(num, numContador.valor, fila.max)
@@ -176,10 +180,8 @@ const ejecucion = (num, valor, fila) => {
 
 const verificacion = (array1, array2, column) => {
     if ((array1.length === 4) && (array1[0] != '')) {
-
         for (let i = 0; i <= array2.length; i++) {
             if (array1[i] != array2[i]) {
-
                 if ((i == 0)) {
                     const columna = document.getElementById(`columna${column.colUno}`)
                     columna.style.borderWidth = `${4}px`
@@ -200,7 +202,6 @@ const verificacion = (array1, array2, column) => {
                     columna.style.borderWidth = `${4}px`
                     columna.style.borderColor = `#ffff00`
                 }
-
                 if (((array1[i] != array2[0]) && (array1[i] != array2[1])) && ((array1[i] != array2[2]) && (array1[i] != array2[3]))) {
                     if (i == 0) {
                         const columna = document.getElementById(`columna${column.colUno}`)
@@ -223,9 +224,7 @@ const verificacion = (array1, array2, column) => {
                         columna.style.borderColor = `#970f0f`
                     }
                 }
-
             } else {
-
                 if (array1[0] === array2[0]) {
                     const columna = document.getElementById(`columna${column.colUno}`)
                     columna.style.borderWidth = `${6}px`
@@ -262,7 +261,6 @@ const verificacion = (array1, array2, column) => {
         numerosComparacion[posicionArr.posicion]=''
     }
     else {
-
         console.log('por favor rellene los colores')
     }
     if(contadorColumna.valor===nrDeIntentos*4){
